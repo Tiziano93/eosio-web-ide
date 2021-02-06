@@ -1,4 +1,4 @@
-#include <eosio/eosio.hpp>
+ #include <eosio/eosio.hpp>
 
 // Message table
 struct [[eosio::table("message"), eosio::contract("talk")]] message {
@@ -32,7 +32,7 @@ class talk : eosio::contract {
             table.get(reply_to);
 
         // Create an ID if user didn't specify one
-        eosio::check(id < 1'000'000'000ull, "user-specified id is too big");
+        eosio::check(id < 1'000'000'000ull, "user-specified id is too big for me");
         if (!id)
             id = std::max(table.available_primary_key(), 1'000'000'000ull);
 
