@@ -1,0 +1,10 @@
+Creare il contratto--> il file finisce con estensione .cpp
+Per compilarlo bisogna eseguire: eosio-cpp --abigen -o <nomeFileContratto>.wasm <nomeFileContratto>.cpp
+    --> dove <nomeFileContratto> è il nome del file.
+    --> esempio: il nome del file è "assegno.cpp" allora l'instruzione sarà eosio-cpp --abigen -o assegno.wasm assegno.cpp
+    --> questa compilazione genererà due file con estensione .abi e .wasm
+
+Creazione di un account: cleos create account eosio <nomeAccount> <EosDevelopmentPublicKey>
+    --> come creare la key: cleos create key -f <password>  dove password è a tua scelta.
+    --> questo genererà un file con due chiavi, Publica e Privata. Noi dovremmo usare la publica
+    --> per vedere l'account creato utilizzare: cleos get account <nomeAccount>
